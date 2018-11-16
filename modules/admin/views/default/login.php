@@ -1,0 +1,1 @@
+<?php \yii\helpers\VarDumper::dump( Yii::$app->user, 10, true ) ?>
