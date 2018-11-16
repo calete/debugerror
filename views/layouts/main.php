@@ -52,7 +52,11 @@ AppAsset::register($this);
                 )
                 . Html::endForm()
                 . '</li>'
-            )
+            ),
+            ['label' => 'Admin login', 'url' => ['/admin/default/index'], 'visible' => Yii::$app->user->isGuest],
+            ['label' => 'Admin login info', 'url' => ['/admin/default/login'], 'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Front login info', 'url' => ['/site/logininfo'], 'visible' => !Yii::$app->user->isGuest],
+            ['label' => 'Admin logout', 'url' => ['/admin/default/logout'], 'visible' => !Yii::$app->user->isGuest],
         ],
     ]);
     NavBar::end();

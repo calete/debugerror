@@ -23,7 +23,7 @@ class SiteController extends Controller
                 'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout', 'logininfo'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -124,5 +124,10 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionLogininfo()
+    {
+        return $this->render('logininfo');
     }
 }
